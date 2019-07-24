@@ -48,8 +48,6 @@ class DatePickerViewController: UIViewController {
 		delegate?.destinationDateWasChosen(date: datePicker.date)
 		dismiss(animated: true, completion: nil)
 	}
-
-	
 }
 
 
