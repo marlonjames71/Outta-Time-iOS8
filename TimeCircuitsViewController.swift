@@ -13,7 +13,7 @@ class TimeCircuitsViewController: UIViewController {
 	let layer = CAGradientLayer()
 	var currentSpeed: Int = 0
 	var timer = Timer()
-	var datePickerVC = DatePickerViewController()
+//	var datePickerVC = DatePickerViewController()
 
 	var dateFormatter: DateFormatter {
 		let formatter = DateFormatter()
@@ -62,6 +62,9 @@ class TimeCircuitsViewController: UIViewController {
 			currentSpeed = 0
 			lastTimeDepartedLabel.text = presentTimeLabel.text
 			presentTimeLabel.text = destinationTimeLabel.text
+			let alert = UIAlertController(title: "Time Travel Successful", message: "Your new date is \(presentTimeLabel.text ?? "")", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+			present(alert, animated: true, completion: nil)
 			resetTimer()
 		}
 	}
